@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins';
+}
+
+body{
+    background: #ccb2d7;
+}
+
+button{
+    outline: 0;
+    border: 0;
+}
+
+.btn{
+    background: #f8f8fa;
+    /* background: #7047eb; */
+    padding: 10px 15px;
+    border-radius: 16px;
+    font-size: 1rem;
+}
+
+.fade-num{
+    color: #b6b3ae;
+}
+
+.divider{
+    background: #f8f8fa;
+    height: 2px;
+    border: 0;
+    outline: 0;
+    width: 100%;
+}
+
+.active-day{
+    background: #7047eb;
+    color: #fff;
+    border-radius: 16px;
+    padding: 10px 15px;
+    /* justify-self: center; */
+}
+
+.days-text-content{
+    /* height: 50px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.days-num-content{
+    /* height: 50px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon{
+    font-size: 1rem;
+}
+
+.head{
+    font-size: 1.5rem;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.calendar{
+    background: #fff;
+    width: 450px;
+    /* width: 95%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    border-radius: 16px;
+    box-shadow:  0px 0px 20px 10px rgb(216 177 208 / 70%);
+    /* box-shadow: 0px 0px 5px 4px #d8b1d0; */
+}
+
+.top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+}
+
+.calendar-main{
+    justify-self: center;
+    width: 100%;
+}
+
+.month-year{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.days-text{
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding: 0 1.5rem;
+}
+
+.days-num{
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    gap: 1.5rem;
+    padding: 0 1.5rem;
+}
+
+.bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+}
