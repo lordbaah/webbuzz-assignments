@@ -1,0 +1,137 @@
+:root{
+    --black-clr: #000000;
+    --orange-clr: #fe9700;
+    --ash-clr: #9f9f9f;
+    --dark-ash: #313131;
+    --white-clr: #ffffff;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body{
+    background: var(--dark-ash);
+    color: var(--ash-clr);
+}
+
+input,
+button{
+    border: 0;
+    outline: 0;
+    font-family: inherit;
+}
+
+.calculator__container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.calculator__app{
+    max-width: 350px;
+    width: 90%;
+    border: solid 2px var(--ash-clr);
+    border-radius: 24px;
+    background: var(--black-clr);
+    position: relative;
+}
+
+
+/* styling screen */
+.screen{
+    height: 150px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    color: var(--white-clr);
+    font-weight: 700;
+    font-size: 3.5rem;
+    padding-right: 2rem;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+    word-break: break-all;
+}
+
+
+/* styling numbers button */
+.buttons__wrap{
+    display: grid;
+    grid-template-columns: repeat(4,65px);
+    justify-content: center;
+    gap: 1rem;
+    padding: 0 1rem 1.5rem 1rem;
+}
+
+.btn{
+    cursor: pointer;
+    background: var(--dark-ash);
+    padding: 1rem;
+    height: 65px;
+    border-radius: 50%;
+    font-weight: 400;
+    color: var(--white-clr);
+    font-size: 1.5rem;
+}
+
+.zero-btn{
+    grid-column: 1/3;
+    border-radius: 999px;
+}
+
+.operator{
+    background: var(--orange-clr);
+}
+
+.ash-color{
+    background: var(--ash-clr);
+    color: var(--black-clr);
+}
+
+
+/* styling error message */
+.error-message{
+    margin-top: -400px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    padding: 1rem;
+    background: var(--orange-clr);
+    transition: ease-in-out;
+}
+
+.error-message p{
+    font-size: 1rem;
+    color: var(--white-clr);
+    text-align: center;
+}
+
+.error-message.active{
+    margin: 0;
+}
+
+
+/* media query */
+@media (max-width: 640px){
+    .calculator__app{
+        width: 80%;
+    }
+
+    .screen{
+        font-size: 2.5rem;
+    }
+
+    .buttons__wrap{
+        grid-template-columns: repeat(4,55px);
+    }
+
+    .btn{
+        font-size: 1rem;
+        height: 55px;
+    }
+}
