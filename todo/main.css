@@ -1,0 +1,145 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #4bb949;
+    font-family: 'poppins';
+}
+
+p{
+    color: #333333bb;
+    font-style: italic;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    position: relative;
+    z-index: 98;
+}
+
+.todo__app{
+    max-width: 500px;
+    width: 90%;
+    background: #fff;
+    padding: 3rem 2rem;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.input-box{
+    display: flex;
+    gap: 1rem;
+}
+
+.to-do__input{
+    padding: 0.5rem 1rem;
+    border: 1px #dddddd solid;
+}
+
+.btn{
+    color: #fff;
+    padding: 0.5rem 2rem;
+    border: none;
+    outline: 0;
+    border-radius: 999px;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+}
+
+.to-do__add_btn{
+    background-color: #0094dc;
+}
+
+.to-do__list{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    list-style: none;
+    counter-reset: count;
+}
+
+li{
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    counter-increment: count;
+}
+
+li::before{
+   content: counter(count) ". ";
+   background-color: transparent;
+}
+
+.active::before{
+    text-decoration: line-through;
+}
+
+li.remove{
+    display: none;
+}
+
+.completed{
+    background: #dddddd;
+    text-decoration: line-through;
+    color: #333333bb;
+}
+
+span{
+    display: block;
+    width: 100%;
+}
+
+.down__btns{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.to-do__completed_clear_btn{
+    background-color: #0094dc;
+}
+
+.to-do__empty_btn{
+    background-color: #99171f;
+    position: relative;
+}
+
+/* .to-do__empty_btn::after{
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #4bb949;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+} */
+
+.to-do__save_btn{
+    background-color: #4bb949;
+}
+
+.error_pop-up{
+    background-color: #99171f;
+    padding: 2rem;
+    position: absolute;
+    top: 50px;
+    z-index: 99;
+    display: none;
+}

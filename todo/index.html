@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+        <div class="todo__app">
+            <h1>My to-do list</h1>
+            <p>Double-click an item to mark it complete.</p>
+            <div class="input-box">
+                <input class="to-do__input" type="text">
+                <button class="to-do__add_btn btn">Add</button>
+            </div>
+            
+            <ol class="to-do__list">
+                 <!-- <li class="active">
+                    <span class="completed">hh</span>
+                </li>
+                <li>
+                    <span class="">hh</span>
+                </li>
+                <li>
+                    <span class="">hh</span>
+                </li> -->
+            </ol>
+
+            <div class="down__btns">
+                <button class="to-do__completed_clear_btn btn">Clear Completed</button>
+                <button class="to-do__empty_btn btn">Empty List</button>
+                <button class="to-do__save_btn btn">Save List</button>
+            </div>
+        </div>
+
+        <div class="error_pop-up">
+            <h4>Come on enter a task and get something doing</h4>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
