@@ -1,6 +1,8 @@
+'use strict'
 // selecting elements
 const buttons = document.querySelectorAll('.btn');
 const displayscreen = document.querySelector('.screen');
+const clearallbtn = document.querySelector('.clearall-btn');
 const clearbtn = document.querySelector('.clear-btn');
 const equalbtn = document.querySelector('.equal-btn');
 const percentagebtn = document.querySelector('.percentagebtn');
@@ -13,7 +15,11 @@ buttons.forEach((button) => {
     button.addEventListener('click', () => {
         // storing display screen text in a variable
         let displaytext = button.value;
-        console.log(displaytext);
+
+        // Check if the current text on the screen exceeds 15 characters
+        if (displayscreen.textContent.length >= 20) {
+            return; // Exit the function if the limit is reached
+        }
 
         // Check if the current text on the screen is "0"
         if (displayscreen.textContent === '0') {
@@ -25,8 +31,20 @@ buttons.forEach((button) => {
 });
 
 // adding eventlistener to clear screen and replace "0"
-clearbtn.addEventListener('click', () => {
+clearallbtn.addEventListener('click', () => {
     displayscreen.textContent = '0';
+});
+
+
+// Event listener for backspace button
+clearbtn.addEventListener('click', () => {
+    // Remove the last character from the screen text
+    let currentText = displayscreen.textContent;
+    if (currentText.length > 1) {
+        displayscreen.textContent = currentText.slice(0, -1); // Remove last character
+    } else {
+        displayscreen.textContent = '0'; // Reset to '0' if only one character is left
+    }
 });
 
 
@@ -34,7 +52,10 @@ clearbtn.addEventListener('click', () => {
 const calculate = () => {
     try {
         // Get the expression from the screen and evaluate it
-        const expression = displayscreen.textContent;
+        let expression = displayscreen.textContent;
+        // Replace the division and multiplication symbols with the respective operators
+        expression = expression.replace(/×/g, '*').replace(/÷/g, '/');
+
         const result = eval(expression);
 
         // Display the result on the screen
